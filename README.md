@@ -1,1 +1,1 @@
-# angular-intermediate-28-09-2022
+# angular-intermediate-course-28-09-2022
