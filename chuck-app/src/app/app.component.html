@@ -1,10 +1,19 @@
 
 <button mat-button (click)="showCard()">SHOW CARD</button>
 
-<app-joke-card *ngIf="displayCard" [title]="cardTitle" (likeClicked)="buttonClicked($event)"></app-joke-card>
+<app-joke-card *appDuplicate="[false, true]"  [title]="cardTitle" (likeClicked)="buttonClicked($event)"></app-joke-card>
 
-<p *ngFor="let joke of jokeArray">
-  {{ joke }}
-</p>
+<ng-container [ngSwitch]="counter">
+  <p *ngSwitchCase="0">No jokes</p>
+  
+  <!-- <app-joke-card *ngSwitchCase="1" [title]="cardTitle" (likeClicked)="buttonClicked($event)"></app-joke-card> -->
+
+  <ng-container *ngSwitchDefault>
+    <p *ngFor="let joke of jokeArray">
+      {{ joke }}
+    </p>
+  </ng-container>
+</ng-container>
+
 
 <router-outlet></router-outlet>

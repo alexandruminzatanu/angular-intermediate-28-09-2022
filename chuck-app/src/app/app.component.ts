@@ -11,6 +11,8 @@ export class AppComponent implements OnInit{
   displayCard: boolean = false;
   jokeArray: string[] = ['joke1', 'joke2', 'joke3'];
 
+  counter: number = 0;
+
   ngOnInit(): void {
     setTimeout(()=>{
       this.cardTitle = 'New title';
@@ -21,7 +23,8 @@ export class AppComponent implements OnInit{
     console.log(event);
   }
 
-  showCard(){
+  showCard() {
     this.displayCard = true;
+    this.counter++;
   }
 }
