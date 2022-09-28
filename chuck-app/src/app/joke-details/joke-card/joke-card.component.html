@@ -2,7 +2,7 @@
   <mat-card-title>{{joke.title}}</mat-card-title>
   <mat-card-content>{{joke.content}}</mat-card-content>
   <mat-card-actions>
-    <button mat-button>LIKE</button>
+    <button mat-button (click)="onLikeClick()">LIKE</button>
     <button mat-button>SHARE</button>
   </mat-card-actions>
 </mat-card>

@@ -1,5 +1,10 @@
 
+<button mat-button (click)="showCard()">SHOW CARD</button>
 
-<app-joke-card></app-joke-card>
+<app-joke-card *ngIf="displayCard" [title]="cardTitle" (likeClicked)="buttonClicked($event)"></app-joke-card>
+
+<p *ngFor="let joke of jokeArray">
+  {{ joke }}
+</p>
 
 <router-outlet></router-outlet>
