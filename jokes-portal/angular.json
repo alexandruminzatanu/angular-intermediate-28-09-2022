@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "bruce-app": "apps/bruce-app",
+    "bruce-app-e2e": "apps/bruce-app-e2e",
+    "chuck-app": "apps/chuck-app",
+    "chuck-app-e2e": "apps/chuck-app-e2e",
+    "ui": "libs/ui"
+  }
+}
