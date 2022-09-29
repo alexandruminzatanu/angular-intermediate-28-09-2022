@@ -31,13 +31,11 @@ export class StarRatingComponent implements ControlValueAccessor, Validator {
   stars: number[] = [];
   score: number = 2;
 
-  onChange = (score: number) => {
+  // These are here to know that they are functions and if they need parameters
+  // They shouldn't countain any logic because it's lost when registerOnChange() is called when the component is created
+  onChange = (score: number) => {};
 
-  };
-
-  onTouched = () => {
-    this.touched = true;
-  };
+  onTouched = () => {};
 
   touched: boolean = false;
 
@@ -53,12 +51,13 @@ export class StarRatingComponent implements ControlValueAccessor, Validator {
     this.markAsTouched();
     if (!this.disabled) {
       this.score = score;
+      // We call this only when the value changes from our side (template)
+      //    to update the formControl with the latest value
+      // When the value changes from the formControl side, we have the writeValue() function for that
       this.onChange(this.score);
     }
   }
 
-  //////////////////////////////////// 2
-  // called by the Angular form
   writeValue(obj: any): void {
     this.score = obj;
   }
@@ -82,18 +81,16 @@ export class StarRatingComponent implements ControlValueAccessor, Validator {
     }
   }
 
-  //////
   validate(control: AbstractControl): ValidationErrors | null {
-    // const score = control.value;
-    // if (score < 5) {
-    //   return {
-    //     mustBePerfect: {
-    //       score: score,
-    //     },
-    //   };
-    // }
+    const score = control.value;
+    if (score < 5) {
+      return {
+        mustBePerfect: {
+          score: score,
+        },
+      };
+    }
 
     return null;
   }
-  /////////////////////////////
 }
