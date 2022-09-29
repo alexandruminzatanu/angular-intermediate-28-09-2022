@@ -1,4 +1,3 @@
-import { JokeDetailsModule } from './joke-details/joke-details.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,7 +7,9 @@ import { DuplicateDirective } from './duplicate.directive';
 import { RandomJokeComponent } from './random-joke/random-joke.component';
 import { CategoryJokeComponent } from './category-joke/category-joke.component';
 import { HomeComponent } from './home/home.component';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,9 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    JokeDetailsModule
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

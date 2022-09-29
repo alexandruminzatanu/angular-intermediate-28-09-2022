@@ -11,9 +11,17 @@ const routes: Routes = [{
   path: 'random',
   component: RandomJokeComponent
 },{
-  path: 'category',
-  component: CategoryJokeComponent
+  path: 'category/:id',
+  component: CategoryJokeComponent,
+  // children: [{
+  //   path: 'blabla',
+  //   component: RandomJokeComponent
+  // }]
 },{
+  path:'details',
+  loadChildren: () => import('./details-joke/details-joke.module').then(m => m.DetailsJokeModule)
+},
+{
   path:'**',
   redirectTo: ''
 }];
