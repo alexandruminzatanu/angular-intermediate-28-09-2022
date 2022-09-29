@@ -24,5 +24,6 @@
   <button mat-raised-button color="accent" routerLink="category/history" [queryParams]="{sort: 'ASC'}">Category HISTORY</button>
   <button mat-raised-button color="accent"routerLink="random">Random</button>
   <button mat-raised-button color="accent"routerLink="details">Details</button>
+  <button mat-raised-button color="accent" (click)="buttonClicked($event)">GET CATEGORIES</button>
 </mat-toolbar>
 <router-outlet></router-outlet>
