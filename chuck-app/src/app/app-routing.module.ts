@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 import { CategoryJokeComponent } from './category-joke/category-joke.component';
 import { HomeComponent } from './home/home.component';
 import { RandomJokeComponent } from './random-joke/random-joke.component';
@@ -9,7 +10,8 @@ const routes: Routes = [{
   component: HomeComponent
 },{
   path: 'random',
-  component: RandomJokeComponent
+  component: RandomJokeComponent,
+  canActivate: [AuthGuard]
 },{
   path: 'category/:id',
   component: CategoryJokeComponent,
