@@ -10,20 +10,31 @@ import { HomeComponent } from './home/home.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { JokeFormComponent } from './joke-form/joke-form.component';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StarRatingComponent } from './star-rating/star-rating.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     DuplicateDirective,
     RandomJokeComponent,
     CategoryJokeComponent,
-    HomeComponent
+    HomeComponent,
+    JokeFormComponent,
+    StarRatingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,4 @@
+import { JokeFormComponent } from './joke-form/joke-form.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
@@ -19,7 +20,12 @@ const routes: Routes = [{
   //   path: 'blabla',
   //   component: RandomJokeComponent
   // }]
-},{
+},
+{
+  path: 'form',
+  component: JokeFormComponent
+},
+{
   path:'details',
   loadChildren: () => import('./details-joke/details-joke.module').then(m => m.DetailsJokeModule)
 },
